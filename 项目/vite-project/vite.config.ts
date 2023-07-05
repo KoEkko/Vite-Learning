@@ -2,6 +2,7 @@ import { defineConfig, normalizePath } from 'vite'
 import react from '@vitejs/plugin-react'
 import autoprefixer from 'autoprefixer'
 import path from "path"
+import viteEslint from 'vite-plugin-eslint'
 
 const variablePath = normalizePath(path.resolve('./src/variable.scss'))
 
@@ -18,7 +19,8 @@ export default defineConfig({
         autoprefixer({
           // 指定目标浏览器
           overrideBrowserslist:['Chrome > 40', 'ff > 31', 'ie 11']
-        })
+        }),
+        viteEslint()
       ]
     },
     preprocessorOptions: {
